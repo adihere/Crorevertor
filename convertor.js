@@ -4,6 +4,13 @@ var trial1 = config.TRIAL_TOKEN1;
 var trial2 = config.TRIAL_SECRET_KEY1;
 var fixerAPI = config.FIXER_API_KEY;
 
+
+function processSuccess(result) {
+    console.log(result);
+    
+}
+
+
 function clicked(){
 
     alert('fixer_API_TOKEN1 is ' + fixerAPI);
@@ -20,7 +27,7 @@ function clicked(){
     
 fetch('https://api.apilayer.com/fixer/latest?base=USD&symbols=EUR,GBP', requestOptions)
   .then(response => response.text())
-  .then(result => console.log(result))
+  .then(result => processSuccess(result))
   .catch(error => console.log('error', error));
 }
 
