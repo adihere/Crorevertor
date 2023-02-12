@@ -7,6 +7,7 @@ var fixerAPI = config.FIXER_API_KEY;
 
 function processSuccess(result) {
     console.log(result);
+    var baseCCY = result.base;
     
 }
 
@@ -14,7 +15,8 @@ function processSuccess(result) {
 function clicked(){
 
     alert('fixer_API_TOKEN1 is ' + fixerAPI);
-
+    
+    // Set header to call API
     var myHeaders = new Headers();
     myHeaders.append("apikey", fixerAPI);
 
