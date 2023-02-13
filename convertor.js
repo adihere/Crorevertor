@@ -6,8 +6,9 @@ var fixerAPI = config.FIXER_API_KEY;
 
 
 function processSuccess(result) {
-    console.log(result);
-    var baseCCY = result.base;
+  console.log('from process Success');  
+  console.log('Base CCY:' + result.base);    
+  console.log('Rates:' + result.rates);    
     
 }
 
@@ -32,6 +33,21 @@ fetch('https://api.apilayer.com/fixer/latest?base=USD&symbols=EUR,GBP', requestO
   .then(result => processSuccess(result))
   .catch(error => console.log('error', error));
 }
+
+
+function readJSON(){
+  alert('read test JSN data');
+  const LOCAL_URL_API_TEST_DATA  = 'http://localhost:3000/data';
+
+  
+
+  fetch(LOCAL_URL_API_TEST_DATA)
+  .then(response => response.json())
+  .then(result => processSuccess(result))
+  .catch(error => console.log('error', error));
+
+}
+
 
 
 
